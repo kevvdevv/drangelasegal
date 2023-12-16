@@ -73,9 +73,6 @@ export default {
 </script>
 
 <style lang="scss">
-.offering-item {
-  // display: inline-block;
-}
 
 .offering-item-wrapper {
   display: flex;
