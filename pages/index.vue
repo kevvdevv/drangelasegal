@@ -11,14 +11,14 @@
     <div v-if="data.power_up">
       <HomePowerUp :data="data.power_up" />
     </div>
-    <div class="flex-row">
+    <!-- <div class="flex-row">
       <div v-if="data.callout_left">
         <HomeCallout :data="data.callout_left" />
       </div>
       <div v-if="data.callout_right">
         <HomeCallout :data="data.callout_right" />
       </div>
-    </div>
+    </div> -->
     <div v-if="data.testimonial">
       <HomeTestimonial :data="data.testimonial" />
     </div>
