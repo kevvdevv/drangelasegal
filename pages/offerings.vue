@@ -2,9 +2,10 @@
   <div class="offerings-page no-page-padding" ref="top">
     <div class="offerings-page-wrapper">
       <div class="offerings-wrapper">
-        <div v-for="item in data">
-          <OfferingItem :data="item" />
-        </div>
+        <OfferingItem :data="data.offering1" />
+        <OfferingItem :data="data.offering2" />
+        <OfferingItem :data="data.offering3" />
+        <OfferingItem :data="data.offering4" />
       </div>
     </div>
   </div>
