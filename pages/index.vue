@@ -8,6 +8,11 @@
         <HomeBanner :data="data.banner" />
       </div>
     </div>
+    <div class="homepage-video-wrapper">
+      <client-only>
+        <vimeo-player ref="player" :video-id="videoID" @ready="onReady" :player-height="height"/>
+      </client-only>
+    </div>
     <div v-if="data.power_up">
       <HomePowerUp :data="data.power_up" />
     </div>
@@ -84,7 +89,29 @@ export default {
   async asyncData({ $sanity }) {
     const data = await $sanity.fetch(query).then((res) => res);
     return { data };
-  }
+  },
+  data() {
+		return {
+			videoID: '894621415',
+			height: 500,
+			options: {
+				muted: true,
+	      			autoplay: true,
+			},
+			playerReady: false
+		}
+	},
+	methods: {
+		onReady() {
+			this.playerReady = true
+		},
+		play () {
+			this.$refs.player.play()
+		},
+		pause () {
+			this.$refs.player.pause()
+		}
+	}
 };
 </script>
 
@@ -98,5 +125,18 @@ export default {
   >div {
     height: 100%;
   }
+}
+.homepage-video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+}
+.homepage-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 </style>
