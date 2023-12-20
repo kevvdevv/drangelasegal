@@ -8,13 +8,13 @@
         <HomeBanner :data="data.banner" />
       </div>
     </div>
+    <div v-if="data.power_up">
+      <HomePowerUp :data="data.power_up" />
+    </div>
     <div class="homepage-video-wrapper">
       <client-only>
         <vimeo-player ref="player" :video-id="videoID" @ready="onReady" :player-height="height"/>
       </client-only>
-    </div>
-    <div v-if="data.power_up">
-      <HomePowerUp :data="data.power_up" />
     </div>
     <!-- <div class="flex-row">
       <div v-if="data.callout_left">
