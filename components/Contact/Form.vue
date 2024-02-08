@@ -859,16 +859,12 @@ export default {
       if (!this.areFieldsValid) {
         return null;
       }
-      if (!profanity.exists(this.messageInput)) {
         const values = Object.values(this.areFieldsValid);
         if (values.includes(false)) {
           return false;
         } else {
           return true;
         }
-      } else {
-        return false;
-      }
     },
   },
   methods: {
@@ -876,6 +872,9 @@ export default {
       // console.log('hi')
       this.clickedSubmit = true;
       if (!this.isFormValid) {
+        this.hasError = true;
+      }
+      if (profanity.exists(this.messageInput)) {
         this.hasError = true;
       }
     },
