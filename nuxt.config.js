@@ -107,5 +107,5 @@ export default async () => {
         'vue-vimeo-player'
       ],
     },
-  }
+  };
 }

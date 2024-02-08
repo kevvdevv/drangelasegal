@@ -65,6 +65,9 @@
 </template>
   
 <script>
+import { profanity } from '@2toad/profanity';
+profanity.addWords(['manchester', 'Manchester', 'die', 'suicide', 'kill yourself']);
+
 export default {
   props: {
     successRoute: {
@@ -144,7 +147,7 @@ export default {
     onSubmitClick() {
       // console.log('hi')
       this.clickedSubmit = true;
-      if (!this.isFormValid) {
+      if (!this.isFormValid || profanity.exists(this.messageInput)) {
         this.hasError = true;
       }
     },
