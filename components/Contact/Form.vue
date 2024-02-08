@@ -92,9 +92,13 @@ export default {
         return false;
       }
       if (this.nameInput.length > 0) {
+        if (profanity.exists(this.nameInput)) {
+          this.nameInput = '';
+          window.location.replace("/");
+          return false;
+        }
         return true;
       } else {
-        console.log("name not OK");
         return false;
       }
     },
@@ -107,6 +111,11 @@ export default {
         return false;
       }
       if (this.validateEmail(this.emailInput)) {
+        if (profanity.exists(this.emailInput)) {
+          this.emailInput = '';
+          window.location.replace("/");
+          return false;
+        }
         return true;
       } else {
         return false;
@@ -120,6 +129,11 @@ export default {
         return false;
       }
       if (this.messageInput.length > 0) {
+        if (profanity.exists(this.messageInput)) {
+          this.messageInput = '';
+          window.location.replace("/");
+          return false;
+        }
         return true;
       } else {
         console.log("message NOT OK");
