@@ -842,7 +842,7 @@ export default {
         return false;
       }
       if (this.messageInput.length > 0) {
-        return true;
+        
       } else {
         return false;
       }
@@ -867,13 +867,28 @@ export default {
     },
   },
   methods: {
+    clearProperties() {
+      this.hasError = true;
+      this.messageInput = '';
+      this.nameInput = '';
+      this.emailInput = '';
+    },
+    checkProfanity() {
+      if (profanity.exists(this.messageInput) && this.messageInput.length > 0) {
+          this.clearProperties();
+      }
+      if (profanity.exists(this.nameInput) && this.nameInput.length > 0) {
+        this.clearProperties();
+      }
+      if (profanity.exists(this.emailInput) && this.emailInput.length > 0) {
+        this.clearProperties();
+      }
+    },
     onSubmitClick() {
       // console.log('hi')
       this.clickedSubmit = true;
+      checkProfanity();
       if (!this.isFormValid) {
-        this.hasError = true;
-      }
-      if (profanity.exists(this.messageInput) && this.messageInput.length > 0) {
         this.hasError = true;
       }
     },
