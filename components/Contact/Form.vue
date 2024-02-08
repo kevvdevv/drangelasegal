@@ -1,6 +1,6 @@
 <template>
   <form name="contact" method="POST" data-netlify="true" :action="successRoute"
-    enctype="application/x-www-form-urlencoded" netlify-honeypot="bot-field" data-netlify-recaptcha="true"
+    enctype="application/x-www-form-urlencoded" netlify-honeypot="bot-field" data-netlify-recaptcha="false"
     :class="hasError ? 'has-error' : 'no-error'">
     <input type="hidden" name="form-name" value="contact" />
 
@@ -41,7 +41,7 @@
     <div class="form-group text-center" @click="onSubmitClick">
       <div class="flex-col">
         <div class="flex-row align-center mb-24">
-          <div data-netlify-recaptcha="true"></div>
+          <!-- <div data-netlify-recaptcha="true"></div> -->
         </div>
 
         <button :disabled="!isFormValid" class="btn-fill" type="submit">
@@ -94,6 +94,7 @@ export default {
       if (this.nameInput.length > 0) {
         if (profanity.exists(this.nameInput)) {
           this.nameInput = '';
+          window.location.replace("/");
           return false;
         } else {
           return true;
@@ -112,6 +113,7 @@ export default {
       if (this.validateEmail(this.emailInput)) {
         if (profanity.exists(this.emailInput)) {
           this.emailInput = '';
+          window.location.replace("/");
           return false;
         } else {
           return true;
@@ -130,6 +132,7 @@ export default {
       if (this.messageInput.length > 0) {
         if (profanity.exists(this.messageInput)) {
           this.messageInput = '';
+          window.location.replace("/");
           return false;
         } else {
           return true;
