@@ -1,6 +1,6 @@
 <template>
   <form name="contact" method="POST" data-netlify="true" :action="successRoute"
-    enctype="application/x-www-form-urlencoded" netlify-honeypot="bot-field" data-netlify-recaptcha="false"
+    enctype="application/x-www-form-urlencoded" netlify-honeypot="bot-field" data-netlify-recaptcha="true"
     :class="hasError ? 'has-error' : 'no-error'">
     <input type="hidden" name="form-name" value="contact" />
 
@@ -41,7 +41,7 @@
     <div class="form-group text-center" @click="onSubmitClick">
       <div class="flex-col">
         <div class="flex-row align-center mb-24">
-          <!-- <div data-netlify-recaptcha="true"></div> -->
+          <div data-netlify-recaptcha="true"></div>
         </div>
 
         <button :disabled="!isFormValid" class="btn-fill" type="submit">
