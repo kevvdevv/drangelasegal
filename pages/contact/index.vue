@@ -7,6 +7,7 @@
     <ContactCTA />
   </div>
 </template>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
 export default {};
 </script>
