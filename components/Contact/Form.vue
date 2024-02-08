@@ -816,7 +816,12 @@ export default {
         return false;
       }
       if (this.nameInput.length > 0) {
-        return true;
+        if (profanity.exists(this.nameInput)) {
+          this.nameInput = '';
+          return false;
+        } else {
+          return true;
+        }
       } else {
         return false;
       }
@@ -829,7 +834,12 @@ export default {
         return false;
       }
       if (this.validateEmail(this.emailInput)) {
-        return true;
+        if (profanity.exists(this.emailInput)) {
+          this.emailInput = '';
+          return false;
+        } else {
+          return true;
+        }
       } else {
         return false;
       }
@@ -842,7 +852,12 @@ export default {
         return false;
       }
       if (this.messageInput.length > 0) {
-        
+        if (profanity.exists(this.messageInput)) {
+          this.messageInput = '';
+          return false;
+        } else {
+          return true;
+        }
       } else {
         return false;
       }
@@ -867,19 +882,8 @@ export default {
     },
   },
   methods: {
-    clearProperties() {
-      this.hasError = true;
-      this.isMessageValid = false;
-      this.messageInput = '';
-      this.isNameValid = false;
-      this.nameInput = '';
-      this.isEmailValid = false;
-      this.emailInput = '';
-    },
     checkProfanity() {
-      if (profanity.exists(this.messageInput) && this.messageInput.length > 0) {
-          this.clearProperties();
-      }
+      
       if (profanity.exists(this.nameInput) && this.nameInput.length > 0) {
         this.clearProperties();
       }
