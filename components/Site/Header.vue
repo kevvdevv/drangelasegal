@@ -66,6 +66,8 @@
   </header>
 </template>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <script>
 import { groq } from "@nuxtjs/sanity";
 const query = groq`*[_type == "siteMetadata"]{
