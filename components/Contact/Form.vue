@@ -66,7 +66,7 @@
   
 <script>
 import { profanity } from '@2toad/profanity';
-profanity.addWords(['manchester', 'Manchester', 'die', 'suicide', 'kill yourself']);
+profanity.addWords(['manchester', 'Manchester', 'die', 'suicide', 'kill yourself', 'douche']);
 
 export default {
   props: {
@@ -129,6 +129,7 @@ export default {
         name: this.isNameValid,
         email: this.isEmailValid,
         message: this.isMessageValid,
+        content: !profanity.exists(this.messageInput)
       };
     },
     isFormValid() {
@@ -147,7 +148,7 @@ export default {
     onSubmitClick() {
       // console.log('hi')
       this.clickedSubmit = true;
-      if (!this.isFormValid || profanity.exists(this.messageInput)) {
+      if (!this.isFormValid) {
         this.hasError = true;
       }
     },
