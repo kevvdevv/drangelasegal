@@ -851,8 +851,7 @@ export default {
       return {
         name: this.isNameValid,
         email: this.isEmailValid,
-        message: this.isMessageValid,
-        content: !profanity.exists(this.messageInput)
+        message: this.isMessageValid
       };
     },
     isFormValid() {
@@ -874,7 +873,7 @@ export default {
       if (!this.isFormValid) {
         this.hasError = true;
       }
-      if (profanity.exists(this.messageInput)) {
+      if (profanity.exists(this.messageInput) && this.messageInput.length > 0) {
         this.hasError = true;
       }
     },
