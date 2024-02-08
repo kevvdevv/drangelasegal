@@ -862,6 +862,7 @@ export default {
         if (values.includes(false)) {
           return false;
         } else {
+          this.checkProfanity();
           return true;
         }
     },
@@ -869,9 +870,9 @@ export default {
   methods: {
     clearProperties() {
       this.hasError = true;
-      this.messageInput = '';
-      this.nameInput = '';
-      this.emailInput = '';
+      this.messageInput = null;
+      this.nameInput = null;
+      this.emailInput = null;
     },
     checkProfanity() {
       if (profanity.exists(this.messageInput) && this.messageInput.length > 0) {
