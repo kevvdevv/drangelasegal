@@ -89,17 +89,22 @@ export default {
         return "TBD";
       }
       if (!this.nameInput) {
+        console.log("name not OK");
         return false;
       }
       if (this.nameInput.length > 0) {
         if (profanity.exists(this.nameInput)) {
+          console.log(this.nameInput);
           this.nameInput = '';
           window.location.replace("/");
+          console.log("name not OK");
           return false;
         } else {
+          console.log("name  OK");
           return true;
         }
       } else {
+        console.log("name not OK");
         return false;
       }
     },
@@ -108,14 +113,18 @@ export default {
         return "TBD";
       }
       if (!this.emailInput) {
+        console.log("email not OK");
         return false;
       }
       if (this.validateEmail(this.emailInput)) {
         if (profanity.exists(this.emailInput)) {
+          console.log(this.emailInput);
           this.emailInput = '';
           window.location.replace("/");
+          console.log("email not OK");
           return false;
         } else {
+          console.log("email OK");
           return true;
         }
       } else {
@@ -127,17 +136,21 @@ export default {
         return "TBD";
       }
       if (!this.messageInput) {
+        console.log("message NOT OK");
         return false;
       }
       if (this.messageInput.length > 0) {
         if (profanity.exists(this.messageInput)) {
+          console.log(this.messageInput);
           this.messageInput = '';
           window.location.replace("/");
           return false;
         } else {
+          console.log("message OK");
           return true;
         }
       } else {
+        console.log("message NOT OK");
         return false;
       }
     },
