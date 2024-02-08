@@ -136,11 +136,15 @@ export default {
       if (!this.areFieldsValid) {
         return null;
       }
-      const values = Object.values(this.areFieldsValid);
-      if (values.includes(false)) {
-        return false;
+      if (!profanity.exists(this.messageInput)) {
+        const values = Object.values(this.areFieldsValid);
+        if (values.includes(false)) {
+          return false;
+        } else {
+          return true;
+        }
       } else {
-        return true;
+        return false;
       }
     },
   },
