@@ -11,22 +11,22 @@
   </div>
 </template>
   <script>
-import { groq } from "@nuxtjs/sanity";
-const query = groq`
-    *[_type in ["terms"]][0]{
-      content
-  }
-  `;
 
 export default {
   head() {
-    return {
-      title: "Terms",
-    };
-  },
-  async asyncData({ $sanity }) {
-    const data = await $sanity.fetch(query).then((res) => res);
-    return { data };
+    let dsApiClient = new docusign.ApiClient();
+    dsApiClient.setBasePath(docusign_base_uri);
+    dsApiClient.addDefaultHeader('Authorization', 'Bearer ' + args.accessToken);
+    let envelopesApi = new docusign.EnvelopesApi(dsApiClient);
+
+    // Step 1. create the NDSE view
+    let viewRequest = makeConsoleViewRequest(args);
+    // Call the CreateSenderView API
+    // Exceptions will be caught by the calling function
+    let results = await envelopesApi.createConsoleView(args.accountId, {
+      consoleViewRequest: viewRequest,
+    });
+    let url = results.url;
   },
 };
 </script>
