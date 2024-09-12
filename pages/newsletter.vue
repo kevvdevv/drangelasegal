@@ -1,9 +1,15 @@
 <template>
+  Hi
   <div class="text-center page-container newsletter-page">
+    There
     <div class="layout-image-text about">
+      This
       <div class="text-wrapper">
+        Is
         <div class="text-wrapper-inner">
+          A
           <h1 class="heading-style">
+            Test
             POWER UP Your Mind, Body, and Spirit: How to Live a Self-Loving Lifestyle
           </h1>
         </div>
