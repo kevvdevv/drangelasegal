@@ -115,7 +115,7 @@ export default {
     return { data };
   },
 };
-</script>
+`</script>
 
 <style lang="scss">
 .energy-healing {
