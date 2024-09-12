@@ -1,4 +1,5 @@
 <template>
+  Hi
   <div class="text-center page-container newsletter-page">
     <div class="layout-image-text about">
       <div class="text-wrapper">
@@ -28,6 +29,29 @@
 <script>
 import { groq } from "@nuxtjs/sanity";
 const query = groq`
+     *[_type in ["energyHealing"]]{
+ "about": {
+    "title": about.title,
+    "textLarge": about.text_large,
+    "textMain": about.text.rte
+  },
+  "system": {
+    "title": system.title,
+    "text": system.text.rte,
+    "img": {
+      "url": system.img.image.asset->url,
+      "alt": system.img.image.asset->altText
+    }
+  },
+  "banner": {
+      "url": banner.img.image.asset->url,
+      "alt": banner.img.image.asset->altText
+  },
+  "cta": {
+    "heading": cta.heading,
+    "link": cta.link
+}
+}[0]
      *[_type in ["energyHealing"]]{
  "about": {
     "title": about.title,
