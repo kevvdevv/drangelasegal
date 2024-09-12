@@ -1,6 +1,6 @@
 <template>
   <div class="text-center page-container newsletter-page">
-    <div class="layout-image-text about">
+    <div class="page-title">
       <div class="text-wrapper">
         <div class="text-wrapper-inner">
           <h2 class="heading-style">
