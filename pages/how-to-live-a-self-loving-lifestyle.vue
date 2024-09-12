@@ -102,7 +102,7 @@ const query = groq`
     "link": cta.link
 }
 }[0]
-;
+`;
 
 export default {
   head() {
@@ -115,7 +115,7 @@ export default {
     return { data };
   },
 };
-`</script>
+</script>
 
 <style lang="scss">
 .energy-healing {
