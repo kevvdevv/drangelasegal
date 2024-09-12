@@ -3,14 +3,9 @@
     <div class="layout-image-text about">
       <div class="text-wrapper">
         <div class="text-wrapper-inner">
-          <h1 class="heading-style">
+          <h2 class="heading-style">
             POWER UP Your Mind, Body, and Spirit: How to Live a Self-Loving Lifestyle
-          </h1>
-        </div>
-      </div>
-
-      <div class="text-wrapper">
-        <div class="text-wrapper-inner">
+          </h2>
           <p class="large-text-style mb-24">
             A 7-Module Online Course Using Energy Medicine to Unlock Your Highest, Truest Self. In this powerful course, I'll walk you through the steps of how to begin a daily practice of deepening and increasing your Self-Loving living.
           </p>
