@@ -7,7 +7,7 @@
     <div class="layout-image-text about">
       <div class="text-wrapper">
         <div class="text-wrapper-inner">
-          <h1 v-if="data.about.title" class="heading-style">
+          <h1 class="heading-style">
             POWER UP Your Mind, Body, and Spirit: How to Live a Self-Loving Lifestyle
           </h1>
         </div>
@@ -15,15 +15,12 @@
 
       <div class="text-wrapper">
         <div class="text-wrapper-inner">
-          <p v-if="data.about.textLarge" class="large-text-style mb-24">
+          <p class="large-text-style mb-24">
             A 7-Module Online Course Using Energy Medicine to Unlock Your Highest, Truest Self. In this powerful course, I'll walk you through the steps of how to begin a daily practice of deepening and increasing your Self-Loving living.
           </p>
           <p><a href="https://angelasegalphd.thinkific.com/courses/How-to-Live-a-Self-Loving-Lifestyle">More info on the course</a></p>
           <p><a href="https://angelasegalphd.thinkific.com/enroll/2189643?price_id=2951711">Register for the course</a></p>
           <p><a href="https://angelasegalphd.thinkific.com/enroll/2189643?price_id=3991900">Register for the course with flexible payment options</a></p>
-          <div v-if="data.about.textMain" class="rte">
-            <SanityContent :blocks="data.about.textMain" />
-          </div>
         </div>
       </div>
     </div>

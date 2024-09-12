@@ -17,9 +17,6 @@
           <p><a href="https://angelasegalphd.thinkific.com/courses/How-to-Live-a-Self-Loving-Lifestyle">More info on the course</a></p>
           <p><a href="https://angelasegalphd.thinkific.com/enroll/2189643?price_id=2951711">Register for the course</a></p>
           <p><a href="https://angelasegalphd.thinkific.com/enroll/2189643?price_id=3991900">Register for the course with flexible payment options</a></p>
-          <div v-if="data.about.textMain" class="rte">
-            <SanityContent :blocks="data.about.textMain" />
-          </div>
         </div>
       </div>
     </div>
