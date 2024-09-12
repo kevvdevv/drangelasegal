@@ -1,5 +1,4 @@
 <template>
-  Hi
   <div class="text-center page-container newsletter-page">
     <div class="layout-image-text about">
       <div class="text-wrapper">
