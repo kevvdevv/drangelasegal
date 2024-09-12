@@ -6,6 +6,7 @@
           <h2 class="heading-style">
             POWER UP Your Mind, Body, and Spirit: How to Live a Self-Loving Lifestyle
           </h2>
+          <img src="https://import.cdn.thinkific.com/716363/courses/2053444/7UgdDNASp6cA6yP5pYUw_Self-Loving%20Lifestyle%20-%20cover.png"></img>
           <p class="large-text-style mb-24">
             A 7-Module Online Course Using Energy Medicine to Unlock Your Highest, Truest Self. In this powerful course, I'll walk you through the steps of how to begin a daily practice of deepening and increasing your Self-Loving living.
           </p>
