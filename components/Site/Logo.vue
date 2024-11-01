@@ -15,10 +15,17 @@
 <script>
 import { groq } from "@nuxtjs/sanity";
 const query = groq`*[_type == "brand"]{
-      "mark": {
-       "url": siteLogo.image.asset->url,
-       "alt": siteLogo.image.asset->altText
-     } 
+      "mark": 
+       coalesce(
+      siteLogo.image.asset->{
+        url,
+        alt
+      },
+      {
+        "url": siteLogo.image.asset->url,              
+        "alt": siteLogo.image.asset->altText
+      }    
+    )
   }[0]`;
 export default {
   props: {
