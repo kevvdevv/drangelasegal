@@ -29,13 +29,13 @@ const query = groq`
     date,
     title,
     "img": coalesce(
-        img.asset->{
-            url,
-            alt
-          },
+      img.image.asset->{
+        url,
+        alt
+      },
       {
-          "url": img.image.asset->url,              
-          "alt": img.image.asset->altText
+        "url": img.image.asset->url,              
+        "alt": img.image.asset->altText
       }    
     ),
     _id
