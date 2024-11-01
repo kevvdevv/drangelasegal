@@ -48,8 +48,7 @@ export default {
         date,
         content,
         title,
-        "img": {
-          coalesce(
+        "img": coalesce(
             img.asset->{
               url,
               alt
@@ -57,9 +56,8 @@ export default {
             {
               "url": img.image.asset->url,              
               "alt": img.image.asset->altText
-            }    
+            }   
           ),
-        },
         _id,
         showNewsletter,
         newsletter

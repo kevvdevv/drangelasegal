@@ -29,15 +29,15 @@ const query = groq`
     date,
     title,
     "img": coalesce(
-      img.asset->{
-        url,
-        alt
-      },
-      {
-        "url": img.asset->url,              
-        "alt": img.asset->altText
-      }    
-    ),
+            img.asset->{
+              url,
+              alt
+            },
+            {
+              "url": img.image.asset->url,              
+              "alt": img.image.asset->altText
+            }   
+          ),
     _id
 }|order(date desc)[0...6]
 `;
@@ -93,14 +93,14 @@ export default {
         date,
         title,
         "img": coalesce(
-             img.asset->{
-                 url,
-                 alt
-               },
+            img.asset->{
+              url,
+              alt
+            },
             {
-               "url": img.image.asset->url,              
-               "alt": img.image.asset->altText
-            }    
+              "url": img.image.asset->url,              
+              "alt": img.image.asset->altText
+            }   
           ),
         _id
     }`;
