@@ -24,14 +24,20 @@ import PageTitle from "../../components/Journal/PageTitle.vue";
 import PostGrid from "../../components/Journal/PostGrid.vue";
 import { groq } from "@nuxtjs/sanity";
 const query = groq`
-*[_type in ["posts"]]{
- "slug": slug.current,
+*[_type == "posts"] {
+  "slug": slug.current,
     date,
     title,
-    "img": {
-      "url": img.image.asset->url,
-      "alt": img.image.asset->altText
-    },
+    "img": coalesce(
+        img.asset->{
+            url,
+            alt
+          },
+      {
+          "url": img.image.asset->url,              
+          "alt": img.image.asset->altText
+      }    
+    ),
     _id
 }|order(date desc)[0...6]
 `;
@@ -86,10 +92,16 @@ export default {
        "slug": slug.current,
         date,
         title,
-        "img": {
-          "url": img.image.asset->url,
-          "alt": img.image.asset->altText
-        },
+        "img": coalesce(
+             img.asset->{
+                 url,
+                 alt
+               },
+            {
+               "url": img.image.asset->url,              
+               "alt": img.image.asset->altText
+            }    
+          ),
         _id
     }`;
 
@@ -128,10 +140,16 @@ export default {
        "slug": slug.current,
         date,
         title,
-        "img": {
-          "url": img.image.asset->url,
-          "alt": img.image.asset->altText
-        },
+        "img": coalesce(
+             img.asset->{
+                 url,
+                 alt
+               },
+            {
+               "url": img.image.asset->url,              
+               "alt": img.image.asset->altText
+            }    
+          ),
         _id
     }`;
       const lastPostId = this.lastPostId;
