@@ -49,8 +49,16 @@ export default {
         content,
         title,
         "img": {
-            "url": img.image.asset->url,
-            "alt": img.image.asset->altText
+          coalesce(
+            img.asset->{
+              url,
+              alt
+            },
+            {
+              "url": img.image.asset->url,              
+              "alt": img.image.asset->altText
+            }    
+          ),
         },
         _id,
         showNewsletter,
