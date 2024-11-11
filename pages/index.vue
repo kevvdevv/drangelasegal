@@ -35,9 +35,9 @@ import { groq } from "@nuxtjs/sanity";
 const query = groq`
 *[_type in ["home"]][0]{
   "banner": {
-    "img1": { "url": banner[0].image.asset._ref, "alt": null },
-    "img2": { "url": banner[1].image.asset._ref, "alt": null },
-    "img3": { "url": banner[2].image.asset._ref, "alt": null },
+    "img1": { "url": banner[0].image.asset._ref, "alt": banner[0].image.asset.altText },
+    "img2": { "url": banner[1].image.asset._ref, "alt": banner[1].image.asset.altText },
+    "img3": { "url": banner[2].image.asset._ref, "alt": banner[2].image.asset.altText },
   },
   "power_up":  {
     "text": power_up,
@@ -46,24 +46,24 @@ const query = groq`
   },
   "callout_left": {
     "img": {
-      "url": callout_left.img.image.asset->url,
-      "alt": callout_left.img.image.asset->altText
+      "url": callout_left.img.image.asset._ref,
+      "alt": callout_left.img.image.asset.altText
     },
     "title": callout_left.title,
     "button": callout_left.button
   },
   "callout_right": {
     "img": {
-      "url": callout_right.img.image.asset->url,
-      "alt": callout_right.img.image.asset->altText
+      "url": callout_right.img.image.asset._ref,
+      "alt": callout_right.img.image.asset.altText
     },
     "title": callout_right.title,
     "button": callout_right.button
   },
   "testimonial": {
     "img": {
-      "url": testimonial.img.image.asset->url,
-      "alt": testimonial.img.image.asset->altText
+      "url": testimonial.img.image.asset._ref,
+      "alt": testimonial.img.image.asset.altText
     },
      "quote": testimonial.testimonial->quote,
      "name": testimonial.testimonial->name,
