@@ -35,15 +35,9 @@ import { groq } from "@nuxtjs/sanity";
 const query = groq`
 *[_type in ["home"]][0]{
   "banner": {
-    "img1":  banner.img1->{ url, alt },
-    "img2": coalesce(
-      banner.img2.asset->{ url, alt },
-      { "url": banner.img2.image.asset->url, "alt": banner.img2.image.asset->altText }   
-    ),
-    "img3": coalesce(
-      banner.img3.asset->{ url, alt },
-      { "url": banner.img3.image.asset->url, "alt": banner.img3.image.asset->altText }   
-    ),
+    "img1":  banner[0].image.asset->{url, alt},
+    "img2":  banner[1].image.asset->{url, alt},
+    "img3":  banner[3].image.asset->{url, alt},
   },
   "power_up":  {
     "text": power_up,
