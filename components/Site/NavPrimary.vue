@@ -4,7 +4,6 @@
       <li><nuxt-link to="/offerings">Offerings</nuxt-link></li>
       <li><nuxt-link to="/video-library">Videos</nuxt-link></li>
       <li><nuxt-link to="/journal">Journal</nuxt-link></li>
-      <li><nuxt-link to="/newsletter">Self-Loving Lifestyle Course</nuxt-link></li>
     </ul>
   </nav>
 </template>
