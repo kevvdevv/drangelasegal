@@ -35,18 +35,9 @@ import { groq } from "@nuxtjs/sanity";
 const query = groq`
 *[_type in ["home"]][0]{
   "banner": {
-    "img1": {
-      "url": banner.img1.image.asset->url,
-      "alt": banner.img1.image.asset->altText
-    },
-    "img2": {
-      "url": banner.img2.image.asset->url,
-      "alt": banner.img2.image.asset->altText
-    },
-    "img3": {
-      "url": banner.img3.image.asset->url,
-      "alt": banner.img3.image.asset->altText
-    },
+    "img1": banner[0].image.asset->{url, alt},
+    "img2": banner[1].image.asset->{url, alt},
+    "img3": banner[2].image.asset->{url, alt},
   },
   "power_up":  {
     "text": power_up,
